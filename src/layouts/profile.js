@@ -1,8 +1,6 @@
 import { View, Text, StyleSheet } from 'react-native';
-
-import { icon } from '"../../../assets/icon.png';
-
-import { ProfilePic } from '../components/atoms/profilePic';
+import { Avatar } from 'react-native-paper';
+import  me from '../../assets/me2.jpg';
 
 import { color } from '../utils/color';
 
@@ -10,11 +8,15 @@ const Profile = () => {
 	
 	return(
 		 <View style={styles.container}>
-			<View style={styles.top}>
-				<ProfilePic src={icon} />
+			<View style={styles.profileHeader}>
+				<Avatar.Image size={120} source={me} />
+				<Text style={styles.userName}>Eniola Fashola</Text>
 			</View>
-			<Text>Na the profile page be this</Text>
-			<Text>Shotiyee</Text>
+			<View style={styles.profileInfoBox}>
+				<Text>Na the profile page be this</Text>
+				<Text>Shotiyee</Text>
+			</View>
+			
 		</View>
 	);
 }
@@ -27,9 +29,20 @@ const styles = StyleSheet.create({
   	// justifyContent: 'center',
   	alignItems: 'center'
   },
-  top: {
-	marginTop: '25%',
-	marginBottom: '20%'
+  profileHeader: {
+	flex: 1,
+	marginTop: 50,
+	width: '100%',
+	alignItems: 'center',
+	justifyContent: 'space-around',
+  },
+  userName: {
+	fontSize: 25,
+	fontWeight: 'bold',
+
+  },
+  profileInfoBox: {
+	flex: 2,
   }
   
 });

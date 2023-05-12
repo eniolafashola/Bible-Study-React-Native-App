@@ -6,6 +6,8 @@ import OptionBox from '../components/option-box';
 import QuestionBox from '../components/question-box';
 import { question } from '../question/question';
 
+import { StatusBar } from 'expo-status-bar';
+
 import { ScoreContext } from '../contexts/data.context';
 
 import { color } from '../utils/color';
@@ -81,6 +83,10 @@ const QuizPage = ({navigation}) => {
 					style={[
 						styles.submit,{backgroundColor: buttonBackground 
 				}]}>SUBMIT</Button>
+			<StatusBar
+				style='auto'
+				backgroundColor={color.head} 
+			/>
           </View>
      </>  
   );

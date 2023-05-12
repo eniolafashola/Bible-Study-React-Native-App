@@ -1,6 +1,8 @@
 import { useEffect } from 'react';
 import { StyleSheet, Text, View, BackHandler, Alert } from 'react-native';
 import { Button } from 'react-native-paper';
+import { StatusBar } from 'expo-status-bar';
+
 
 import { useContext } from 'react';
 import { ScoreContext } from '../contexts/data.context';
@@ -49,6 +51,10 @@ const FinishQuizPage = ({navigation}) => {
 					onPress={contToStart}
 					style={styles.but}>CONTINUE</Button>
 			</View>
+			<StatusBar
+			 style='auto'
+			 backgroundColor={color.body} 
+			/>
 		</View>
 	);
 };

@@ -1,11 +1,6 @@
 import { SafeAreaView, StyleSheet, Text, View } from 'react-native';
-import { Button } from 'react-native-paper';
-
+import { StatusBar } from 'expo-status-bar';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-
-import FinishQuizPage from '../pages/finishQuizPage';
-import QuizPage from '../pages/quizPage';
-
 import { useContext } from 'react';
 import { ScoreContext } from '../contexts/data.context';
 import HeadingBox from '../components/heading-box';
@@ -31,30 +26,12 @@ const MainPage = ({navigation}) => {
             <View style={styles.body} onStartShouldSetResponder={contToStart}>
 				
 			</View>
+			<StatusBar
+			 style='auto'
+			 backgroundColor={color.head} 
+			/>
 		</SafeAreaView>
 	);
-	
-	/**return(
-			  <NavigationContainer>
-  		
-			<Stack.Navigator screenOptions={{headerShown: false}}>
-       		<Stack.Screen
-					name="MainPage"
-         		   component={MainPage}
-       		/>
-       		<Stack.Screen 
-			   	name="QuizPage" 
-				   component={QuizPage} 
-				/>
-				<Stack.Screen 
-			   	name="FinishQuizPage" 
-				   component={FinishQuizPage} 
-				/>
-  		</Stack.Navigator>
-		  <StatusBar style="hidden" />
-		
-	   </NavigationContainer>
-	);*/
 };
 
 const styles = StyleSheet.create({

@@ -2,13 +2,11 @@ import { SafeAreaView, StyleSheet, Text, View } from 'react-native';
 import { Button } from 'react-native-paper';
 
 import { useContext } from 'react';
-
-import { MenuOption } from '../components/atoms/menuOption';
-
 import { ScoreContext } from '../contexts/data.context';
 import HeadingBox from '../components/heading-box';
 
 import { color } from '../utils/color';
+import { StatusBar } from 'expo-status-bar';
 
 const HomeTab = ({navigation}) => {
 	const { currentScore, setCurrentScore } = useContext(ScoreContext);
@@ -20,17 +18,17 @@ const HomeTab = ({navigation}) => {
 	
 	return(
 		<SafeAreaView style={styles.container}>
-			<HeadingBox 
+			{/* <HeadingBox 
 				title='BIBLE STUDY'
 				clickIcon={<Text>click me</Text>}
-			/>
+			/> */}
             <View style={styles.body}>
-            {/*	<MenuOption action={start} title='Quiz' />
-            	<MenuOption action={start} title='Quiz' />
-            	<MenuOption action={start} title='Quiz' />
-            	<MenuOption action={start} title='Quiz' /> */}
             	<Button onPress={start}>Click</Button>
 			</View>
+			<StatusBar
+			 style='auto'
+			 backgroundColor={color.head} 
+			/>
 		</SafeAreaView>
 	);
 };
